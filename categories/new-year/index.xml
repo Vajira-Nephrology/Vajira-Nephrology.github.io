@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>New Year on Vajira Nephrology</title>
+    <link>http://localhost:1313/categories/new-year/</link>
+    <description>Recent content in New Year on Vajira Nephrology</description>
+    <generator>Hugo</generator>
+    <language>th</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/new-year/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Happy new fsdfsdfr</title>
+      <link>http://localhost:1313/blog/2024/01/01/newyear/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2024/01/01/newyear/</guid>
+      <description>&lt;h2 id=&#34;happy-new-year&#34;&gt;Happy New Year&lt;/h2&gt;&#xA;&lt;p&gt;fasdfasd f&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;list A&lt;/li&gt;&#xA;&lt;li&gt;list B&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
