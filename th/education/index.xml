@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Educations on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>http://localhost:1313/th/education/</link>
+    <link>http://vajira-nephrology.github.io/th/education/</link>
     <description>Recent content in Educations on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
-    <atom:link href="http://localhost:1313/th/education/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://vajira-nephrology.github.io/th/education/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>หลักสูตรอายุรศาสตร์โรคไต</title>
-      <link>http://localhost:1313/th/education/curriculum/</link>
+      <link>http://vajira-nephrology.github.io/th/education/curriculum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/th/education/curriculum/</guid>
-      <description>&lt;h2 id=&#34;หลกสตรอายรศาสตรโรคไต&#34;&gt;หลักสูตรอายุรศาสตร์โรคไต&lt;/h2&gt;&#xA;&lt;p&gt;หลักสูตรอายุรศาสตร์โรคไตของเราได้รับการออกแบบมาเพื่อให้ความรู้และทักษะที่จำเป็นสำหรับการดูแลผู้ป่วยโรคไตอย่างมีประสิทธิภาพ หลักสูตรนี้ครอบคลุมหัวข้อต่างๆ เช่น การวินิจฉัยและการจัดการโรคไต การบำบัดทดแทนไต และการดูแลผู้ป่วยที่มีภาวะแทรกซ้อนจากโรคไต&lt;/p&gt;&#xA;&lt;p&gt;หลักสูตรนี้ประกอบด้วยการบรรยาย การฝึกปฏิบัติ และการฝึกงานในโรงพยาบาล เพื่อให้ผู้เข้าร่วมได้รับประสบการณ์จริงในการดูแลผู้ป่วยโรคไต นอกจากนี้ยังมีการอภิปรายกรณีศึกษาและการวิจัยเพื่อส่งเสริมความเข้าใจเชิงลึกเกี่ยวกับโรคไตและการจัดการ&lt;/p&gt;&#xA;&lt;h2 id=&#34;download-curriculum&#34;&gt;Download Curriculum&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/education/pdf/curriculum-2023.pdf&#34;&gt;Download the curriculum&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>http://vajira-nephrology.github.io/th/education/curriculum/</guid>
+      <description>&lt;h2 id=&#34;หลกสตรอายรศาสตรโรคไต&#34;&gt;หลักสูตรอายุรศาสตร์โรคไต&lt;/h2&gt;&#xA;&lt;p&gt;หลักสูตรอายุรศาสตร์โรคไตของเราได้รับการออกแบบมาเพื่อให้ความรู้และทักษะที่จำเป็นสำหรับการดูแลผู้ป่วยโรคไตอย่างมีประสิทธิภาพ หลักสูตรนี้ครอบคลุมหัวข้อต่างๆ เช่น การวินิจฉัยและการจัดการโรคไต การบำบัดทดแทนไต และการดูแลผู้ป่วยที่มีภาวะแทรกซ้อนจากโรคไต&lt;/p&gt;&#xA;&lt;p&gt;หลักสูตรนี้ประกอบด้วยการบรรยาย การฝึกปฏิบัติ และการฝึกงานในโรงพยาบาล เพื่อให้ผู้เข้าร่วมได้รับประสบการณ์จริงในการดูแลผู้ป่วยโรคไต นอกจากนี้ยังมีการอภิปรายกรณีศึกษาและการวิจัยเพื่อส่งเสริมความเข้าใจเชิงลึกเกี่ยวกับโรคไตและการจัดการ&lt;/p&gt;&#xA;&lt;h2 id=&#34;download-curriculum&#34;&gt;Download Curriculum&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://vajira-nephrology.github.io/education/pdf/curriculum-2023.pdf&#34;&gt;Download the curriculum&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Doe on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>http://localhost:1313/th/authors/john-doe/</link>
+    <link>http://vajira-nephrology.github.io/th/authors/john-doe/</link>
     <description>Recent content in John Doe on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
     <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/th/authors/john-doe/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://vajira-nephrology.github.io/th/authors/john-doe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Categories Post</title>
-      <link>http://localhost:1313/th/blog/2021/08/01/categories-post/</link>
+      <link>http://vajira-nephrology.github.io/th/blog/2021/08/01/categories-post/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>http://localhost:1313/th/blog/2021/08/01/categories-post/</guid>
+      <guid>http://vajira-nephrology.github.io/th/blog/2021/08/01/categories-post/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a post with multiple categories in the frontmatter:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;categories = [&amp;quot;programming&amp;quot;,&amp;quot;lorem&amp;quot;,&amp;quot;pseudo&amp;quot;]&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus. Pellentesque sed tempus risus. Proin id hendrerit ante. Vestibulum vitae urna ut mauris ultricies dignissim. Ut ante turpis, tristique vitae sagittis quis, sagittis nec diam. Fusce pulvinar cursus porta. Vivamus maximus leo dolor, ut pellentesque lorem fringilla nec. Mauris faucibus turpis posuere sapien euismod, a ullamcorper mi maximus.&lt;/p&gt;</description>
     </item>
     <item>
       <title>test research</title>
-      <link>http://localhost:1313/th/research/2021/08/01/test/</link>
+      <link>http://vajira-nephrology.github.io/th/research/2021/08/01/test/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>http://localhost:1313/th/research/2021/08/01/test/</guid>
+      <guid>http://vajira-nephrology.github.io/th/research/2021/08/01/test/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a post with multiple categories in the frontmatter:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;categories = [&amp;quot;programming&amp;quot;,&amp;quot;lorem&amp;quot;,&amp;quot;pseudo&amp;quot;]&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     <item>
       <title>My second Post</title>
-      <link>http://localhost:1313/th/blog/2006/01/03/my-first-post-copy/</link>
+      <link>http://vajira-nephrology.github.io/th/blog/2006/01/03/my-first-post-copy/</link>
       <pubDate>Tue, 03 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/th/blog/2006/01/03/my-first-post-copy/</guid>
+      <guid>http://vajira-nephrology.github.io/th/blog/2006/01/03/my-first-post-copy/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text, and this is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; website!&lt;/p&gt;</description>
     </item>
   </channel>
