@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
+    <link>http://localhost:1313/th/authors/</link>
+    <description>Recent content in Authors on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
+    <generator>Hugo</generator>
+    <language>th</language>
+    <lastBuildDate>Fri, 28 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/th/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VJR Nephro</title>
+      <link>http://localhost:1313/th/authors/vjr-nephro/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/th/authors/vjr-nephro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>John Doe</title>
+      <link>http://localhost:1313/th/authors/john-doe/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      <guid>http://localhost:1313/th/authors/john-doe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kavee Limbutara</title>
+      <link>http://localhost:1313/th/authors/kavee-limbutara/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      <guid>http://localhost:1313/th/authors/kavee-limbutara/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KL</title>
+      <link>http://localhost:1313/th/authors/kl/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      <guid>http://localhost:1313/th/authors/kl/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
