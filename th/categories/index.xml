@@ -2,45 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>http://vajira-nephrology.github.io/th/categories/</link>
+    <link>http://www.vajirakidney.org/th/categories/</link>
     <description>Recent content in Categories on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
-    <lastBuildDate>Fri, 28 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://vajira-nephrology.github.io/th/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.vajirakidney.org/th/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Facebook</title>
-      <link>http://vajira-nephrology.github.io/th/categories/facebook/</link>
-      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://vajira-nephrology.github.io/th/categories/facebook/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>New Year</title>
-      <link>http://vajira-nephrology.github.io/th/categories/new-year/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://vajira-nephrology.github.io/th/categories/new-year/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Lorem</title>
-      <link>http://vajira-nephrology.github.io/th/categories/lorem/</link>
-      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>http://vajira-nephrology.github.io/th/categories/lorem/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Programming</title>
-      <link>http://vajira-nephrology.github.io/th/categories/programming/</link>
-      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>http://vajira-nephrology.github.io/th/categories/programming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pseudo</title>
-      <link>http://vajira-nephrology.github.io/th/categories/pseudo/</link>
-      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>http://vajira-nephrology.github.io/th/categories/pseudo/</guid>
+      <link>http://www.vajirakidney.org/th/categories/facebook/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.vajirakidney.org/th/categories/facebook/</guid>
       <description></description>
     </item>
   </channel>

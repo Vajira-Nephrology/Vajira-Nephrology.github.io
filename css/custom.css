@@ -11,3 +11,16 @@
 .box-simple {
   min-height: 230px;
 }
+
+.customers .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.customers .item img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}

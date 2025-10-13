@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>อาจารย์แพทย์ on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>http://vajira-nephrology.github.io/th/personnel/staff_nephrologists/</link>
+    <link>http://www.vajirakidney.org/th/personnel/staff_nephrologists/</link>
     <description>Recent content in อาจารย์แพทย์ on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
-    <atom:link href="http://vajira-nephrology.github.io/th/personnel/staff_nephrologists/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.vajirakidney.org/th/personnel/staff_nephrologists/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

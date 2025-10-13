@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
@@ -29,6 +29,9 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
 <link href="/css/animate.css" rel="stylesheet">
 
 
@@ -37,7 +40,7 @@
 
 
 
-<link href="/css/custom.css?1752387834" rel="stylesheet">
+<link href="/css/custom.css?1760336617" rel="stylesheet">
 
 
 
@@ -56,7 +59,7 @@
 <link href="/css/owl.theme.css" rel="stylesheet">
 
 
-<link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล">
+<link rel="alternate" href="http://www.vajirakidney.org/index.xml" type="application/rss+xml" title="สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล">
 
 
 
@@ -69,18 +72,18 @@
 <meta property="og:site_name" content="สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล">
 <meta property="og:title" content="Hemodialysis">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:1313/th/service/hemodialysis/" />
+<meta property="og:url" content="http://www.vajirakidney.org/th/service/hemodialysis/" />
 <meta property="og:description" content="defaultDescription&hellip;">
-<meta property="og:image" content="http://localhost:1313/img/sharing-default.png">
+<meta property="og:image" content="http://www.vajirakidney.org/img/banners/hemodialysis-banner.png">
 <meta property="og:image:type" content="image/png">
 
 
 
-  <meta property="og:image:width" content="800">
-  <meta property="og:image:height" content="420">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
 
 
-<meta property="og:updated_time" content="2021-08-01T21:29:20&#43;0200">
+
 
 
 
@@ -88,10 +91,13 @@
 <meta name="twitter:site" content="@VJRNephro">
 <meta name="twitter:title" content="Hemodialysis">
 
-<meta name="twitter:image" content="http://localhost:1313/img/sharing-default.png">
+<meta name="twitter:image" content="http://www.vajirakidney.org/img/banners/hemodialysis-banner.png">
 
 <meta name="twitter:description" content="defaultDescription&hellip;">
 
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="c3eed0c0-e864-4e44-a456-b2eee952ddfc"></script>
 
   
 </head>
@@ -115,17 +121,17 @@
             
             
             
-            <a href="/th/service/hemodialysis/"
-               class="active">
-              ไทย
+            <a href="/en/service/hemodialysis/"
+               class="">
+              
             </a>
             
             
             
             
-            <a href="/en/service/hemodialysis/"
-               class="">
-              English
+            <a href="/th/service/hemodialysis/"
+               class="active">
+              ไทย
             </a>
             
           </div>
@@ -136,11 +142,11 @@
             
             <a href="tel:02-244-3482" target="_blank" style="opacity: 1;"><i class='fas fa-2x fa-phone'></i></a>
             
-            <a href="https://github.com/Vajira-Nephrology" target="_blank" style="opacity: 1;"><i class='fab fa-2x fa-github'></i></a>
-            
             <a href="https://www.facebook.com/KidneyVajira" target="_blank" style="opacity: 1;"><i class='fab fa-2x fa-facebook'></i></a>
             
             <a href="https://x.com/VJRNephro" target="_blank" style="opacity: 1;"><i class='fab fa-2x fa-x-twitter'></i></a>
+            
+            <a href="https://github.com/Vajira-Nephrology" target="_blank" style="opacity: 1;"><i class='fab fa-2x fa-github'></i></a>
             
             <a href="mailto:opd.nep@nmu.ac.th" target="_blank" style="opacity: 1;"><i class='fas fa-2x fa-envelope'></i></a>
             
@@ -161,11 +167,11 @@
                       <img src="/img/VJRnephro.png" alt="Hemodialysis logo" class="hidden-xs hidden-sm" />
                       <img src="/img/VJRnephro.png" alt="Hemodialysis logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">Hemodialysis - </span>
+                    <span class="sr-only">Hemodialysis - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
-                      <span class="sr-only"></span>
+                      <span class="sr-only">Toggle Navigation</span>
                         <i class="fas fa-align-justify"></i>
                     </button>
                 </div>
@@ -202,9 +208,18 @@
                   
 
                   
-                  <li class="dropdown ">
-                    <a href="/th/personnel">บุคลากร</a>
-                  </li>
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">บุคลากร <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/th/personnel/staff_nephrologists">อาจารย์แพทย์</a></li>
+                            
+                        </ul>
+                        
+                    </li>
                   
                   
                   
@@ -269,11 +284,43 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/th/fellows">แพทย์ประจำบ้านต่อยอด</a></li>
+                            <li><a href="/th/education/fellows">แพทย์ประจำบ้านต่อยอด</a></li>
+                            
+                            <li><a href="/th/education/curriculum">หลักสูตรอายุรศาสตร์โรคไต</a></li>
                             
                         </ul>
                         
                     </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/th/news">ข่าวสาร</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/th/blog">บทความ</a>
+                  </li>
                   
                   
                   
@@ -336,50 +383,23 @@
             <div class="col-md-9" id="blog-post">
 
               
-              <p class="text-muted text-uppercase mb-small text-right">
-                
-                 <a
-                  href="%20/th/authors/kl">KL</a>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                 1, 2021
-                
-              </p>
-              
 
               <div id="post-content">
-                <h3 id="fadfasd">fadfasd</h3>
-<p>ffadf</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-<p>fasdf</p>
-
+                <h2 id="การฟอกเลอดดวยเครองไตเทยม">การฟอกเลือดด้วยเครื่องไตเทียม</h2>
+<p>ให้บริการฟอกเลือดด้วยเครื่องไตเทียมแก่ผู้ป่วยโรคไตเรื้อรังระยะสุดท้าย และผู้ป่วยโรคไตเฉียบพลันที่มีข้อบ่งชี้ต้องฟอกเลือดชั่วคราว โดยมีทีมอายุรแพทย์โรคไต พยาบาลผู้เชี่ยวชาญด้านการฟอกเลือด และทีมสหสาขาวิชาชีพดูแลอย่างใกล้ชิด</p>
+<h3 id="บรการของเรา">บริการของเรา</h3>
+<ul>
+<li>การฟอกเลือดผู้ป่วยนอก (Chronic Hemodialysis)</li>
+<li>การฟอกเลือดผู้ป่วยใน (Acute Hemodialysis)</li>
+<li>การเปลี่ยนถ่ายน้ำเหลือง (Plasmapheresis)</li>
+<li>การฟอกเลือดแบบต่อเนื่องในผู้ป่วยวิกฤต (Continuous Renal Replacement Therapy; CRRT)</li>
+<li>การให้ความรู้ผู้ป่วยและญาติในการดูแลตนเองระหว่างการฟอกเลือด</li>
+</ul>
+<h3 id="เปาหมายของเรา">เป้าหมายของเรา</h3>
+<p>เพื่อให้ผู้ป่วยได้รับการรักษาที่ปลอดภัย มีคุณภาพ และสามารถดำรงชีวิตได้อย่างมีคุณค่า</p>
+<hr>
+<p><strong>ศูนย์ไตเทียม โรงพยาบาลวชิรพยาบาล</strong><br>
+อาคาเพชรรัตน์ ชั้น 2</p>
               </div>
               
               
@@ -400,14 +420,14 @@
 <div class="panel panel-default sidebar-menu">
 
     <div class="panel-heading">
-      <h3 class="panel-title"></h3>
+      <h3 class="panel-title">Search</h3>
     </div>
 
     <div class="panel-body">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
             <div class="input-group">
-                <input type="search" name="q" class="form-control" placeholder="">
-                <input type="hidden" name="sitesearch" value="http://localhost:1313/">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="http://www.vajirakidney.org/">
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
                 </span>
@@ -425,7 +445,7 @@
 <div class="panel panel-default sidebar-menu">
 
     <div class="panel-heading">
-        <h3 class="panel-title"></h3>
+        <h3 class="panel-title">Categories</h3>
     </div>
 
     <div class="panel-body">
@@ -433,19 +453,7 @@
             
             
             <li>
-                <a href="/th/categories/lorem">LOREM (2)</a>
-            </li>
-            
-            <li>
-                <a href="/th/categories/new-year">NEW YEAR (1)</a>
-            </li>
-            
-            <li>
-                <a href="/th/categories/programming">PROGRAMMING (2)</a>
-            </li>
-            
-            <li>
-                <a href="/th/categories/pseudo">PSEUDO (2)</a>
+                <a href="/th/categories/facebook">FACEBOOK (5)</a>
             </li>
             
         </ul>
@@ -463,7 +471,7 @@
 <div class="panel sidebar-menu">
 
     <div class="panel-heading">
-        <h3 class="panel-title"></h3>
+        <h3 class="panel-title">Tags</h3>
     </div>
 
     <div class="panel-body">
@@ -471,19 +479,15 @@
             
             
             <li >
-                <a href="/th/tags/golang"><i class="fas fa-tags"></i> golang</a>
+                <a href="/th/tags/ckd"><i class="fas fa-tags"></i> ckd</a>
             </li>
             
             <li >
-                <a href="/th/tags/hugo"><i class="fas fa-tags"></i> hugo</a>
+                <a href="/th/tags/fellow"><i class="fas fa-tags"></i> fellow</a>
             </li>
             
             <li >
-                <a href="/th/tags/programming"><i class="fas fa-tags"></i> programming</a>
-            </li>
-            
-            <li >
-                <a href="/th/tags/theme"><i class="fas fa-tags"></i> theme</a>
+                <a href="/th/tags/myth"><i class="fas fa-tags"></i> myth</a>
             </li>
             
         </ul>
@@ -519,7 +523,7 @@
 
         
         <div class="col-md-4 col-sm-6">
-            <h4></h4>
+            <h4>About us</h4>
 
             <p>The official website for Division of Nephrology and Renal Replacement Therapy, Faculty of Medicine Vajira Hospital.</p>
 
@@ -532,46 +536,46 @@
         <div class="col-md-4 col-sm-6">
 
             
-            <h4></h4>
+            <h4>Recent posts</h4>
 
             <div class="blog-entries">
                 
                 <div class="item same-height-row clearfix">
                     <div class="image same-height-always">
-                        <a href="http://localhost:1313/th/blog/2024/01/01/newyear/">
+                        <a href="http://www.vajirakidney.org/th/blog/2025/09/15/egfr_creatinine/">
                           
-                            <img src="/img/placeholder.png" class="img-responsive" alt="Happy new fsdfsdfr">
+                            <img src="/img/banners/lab-banner.png" class="img-responsive" alt="Creatinine กับ eGFR">
                           
                         </a>
                     </div>
                     <div class="name same-height-always">
-                        <h5><a href="http://localhost:1313/th/blog/2024/01/01/newyear/">Happy new fsdfsdfr</a></h5>
+                        <h5><a href="http://www.vajirakidney.org/th/blog/2025/09/15/egfr_creatinine/">Creatinine กับ eGFR</a></h5>
                     </div>
                 </div>
                 
                 <div class="item same-height-row clearfix">
                     <div class="image same-height-always">
-                        <a href="http://localhost:1313/th/blog/2021/08/01/categories-post/">
+                        <a href="http://www.vajirakidney.org/th/news/fellow-2569/">
                           
-                            <img src="/img/banners/banner-4.jpg" class="img-responsive" alt="Categories Post">
+                            <img src="/img/banners/fellow-banner.png" class="img-responsive" alt="รับสมัครแพทย์ประจำบ้านต่อยอด สาขาอายุรศาสตร์โรคไต ปีการศึกษา 2569">
                           
                         </a>
                     </div>
                     <div class="name same-height-always">
-                        <h5><a href="http://localhost:1313/th/blog/2021/08/01/categories-post/">Categories Post</a></h5>
+                        <h5><a href="http://www.vajirakidney.org/th/news/fellow-2569/">รับสมัครแพทย์ประจำบ้านต่อยอด สาขาอายุรศาสตร์โรคไต ปีการศึกษา 2569</a></h5>
                     </div>
                 </div>
                 
                 <div class="item same-height-row clearfix">
                     <div class="image same-height-always">
-                        <a href="http://localhost:1313/th/research/2021/08/01/test/">
+                        <a href="http://www.vajirakidney.org/th/blog/2025/02/28/sodamint/">
                           
-                            <img src="/img/placeholder.png" class="img-responsive" alt="test research">
+                            <img src="/img/banners/medications.png" class="img-responsive" alt="Sodamint">
                           
                         </a>
                     </div>
                     <div class="name same-height-always">
-                        <h5><a href="http://localhost:1313/th/research/2021/08/01/test/">test research</a></h5>
+                        <h5><a href="http://www.vajirakidney.org/th/blog/2025/02/28/sodamint/">Sodamint</a></h5>
                     </div>
                 </div>
                 
@@ -586,7 +590,7 @@
         
         <div class="col-md-4 col-sm-6">
 
-          <h4></h4>
+          <h4>Contact</h4>
 
             <p class="text-uppercase"><strong>สาขาวิชาโรคไตและการบำบัดทดแทนไต</strong>
         <br>ชั้น 2 อาคารเพชรรัตน์
@@ -597,7 +601,7 @@
       </p>
       
 
-	    <a href="/contact" class="btn btn-small btn-template-main"></a>
+	    <a href="/th/contact" class="btn btn-small btn-template-main">ติดต่อเรา</a>
 
             <hr class="hidden-md hidden-lg hidden-sm">
 
@@ -622,10 +626,10 @@
             <p class="pull-left">Copyright © 2024, Vajira Nephrology; all rights reserved.</p>
             
             <p class="pull-right">
-               <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
+              Template by <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
               
 
-               <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
             </p>
         </div>
     </div>
