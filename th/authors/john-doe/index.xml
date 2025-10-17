@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Doe on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>https://www.vajirakidney.org/th/authors/john-doe/</link>
+    <link>http://localhost:1313/th/authors/john-doe/</link>
     <description>Recent content in John Doe on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
     <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate>
-    <atom:link href="https://www.vajirakidney.org/th/authors/john-doe/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/th/authors/john-doe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research Highlights</title>
-      <link>https://www.vajirakidney.org/th/en/research/test/</link>
+      <link>http://localhost:1313/th/en/research/test/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/research/test/</guid>
+      <guid>http://localhost:1313/th/en/research/test/</guid>
       <description>&lt;p&gt;We showcase collaborative studies that improve outcomes for patients with kidney disease. Topics include chronic kidney disease epidemiology, dialysis quality improvement, transplant medicine, and patient-centered innovations.&lt;/p&gt;</description>
     </item>
   </channel>

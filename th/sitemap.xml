@@ -2,194 +2,194 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.vajirakidney.org/th/en/education/fellows/</loc>
+    <loc>http://localhost:1313/th/en/education/fellows/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/personnel/staff_nephrologists/</loc>
+    <loc>http://localhost:1313/th/en/personnel/staff_nephrologists/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/education/fellows/</loc>
+    <loc>http://localhost:1313/th/education/fellows/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/education/fellows/</loc>
+    <loc>http://localhost:1313/th/th/education/fellows/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/personnel/staff_nephrologists/</loc>
+    <loc>http://localhost:1313/th/personnel/staff_nephrologists/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/personnel/staff_nephrologists/</loc>
+    <loc>http://localhost:1313/th/th/personnel/staff_nephrologists/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/authors/</loc>
+    <loc>http://localhost:1313/th/authors/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.vajirakidney.org/en/authors/"
+                href="http://localhost:1313/en/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="https://www.vajirakidney.org/th/authors/"
+                href="http://localhost:1313/th/authors/"
                 />
   </url><url>
-    <loc>https://www.vajirakidney.org/th/blog/</loc>
+    <loc>http://localhost:1313/th/blog/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/categories/</loc>
+    <loc>http://localhost:1313/th/categories/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.vajirakidney.org/en/categories/"
+                href="http://localhost:1313/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="https://www.vajirakidney.org/th/categories/"
+                href="http://localhost:1313/th/categories/"
                 />
   </url><url>
-    <loc>https://www.vajirakidney.org/th/tags/ckd/</loc>
+    <loc>http://localhost:1313/th/tags/ckd/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/blog/2025/09/15/egfr_creatinine/</loc>
+    <loc>http://localhost:1313/th/blog/2025/09/15/egfr_creatinine/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/blog/egfr_creatinine/</loc>
+    <loc>http://localhost:1313/th/th/blog/egfr_creatinine/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/categories/facebook/</loc>
+    <loc>http://localhost:1313/th/categories/facebook/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/tags/</loc>
+    <loc>http://localhost:1313/th/tags/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.vajirakidney.org/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="https://www.vajirakidney.org/th/tags/"
+                href="http://localhost:1313/th/tags/"
                 />
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/</loc>
+    <loc>http://localhost:1313/th/th/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/authors/vjr-nephro/</loc>
+    <loc>http://localhost:1313/th/authors/vjr-nephro/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/</loc>
+    <loc>http://localhost:1313/th/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.vajirakidney.org/en/"
+                href="http://localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="https://www.vajirakidney.org/th/"
+                href="http://localhost:1313/th/"
                 />
   </url><url>
-    <loc>https://www.vajirakidney.org/th/tags/fellow/</loc>
+    <loc>http://localhost:1313/th/tags/fellow/</loc>
     <lastmod>2025-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/news/</loc>
+    <loc>http://localhost:1313/th/news/</loc>
     <lastmod>2025-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/news/fellow-2569/</loc>
+    <loc>http://localhost:1313/th/news/fellow-2569/</loc>
     <lastmod>2025-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/news/fellow-2569/</loc>
+    <loc>http://localhost:1313/th/th/news/fellow-2569/</loc>
     <lastmod>2025-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/blog/</loc>
+    <loc>http://localhost:1313/th/en/blog/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/</loc>
+    <loc>http://localhost:1313/th/en/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/tags/myth/</loc>
+    <loc>http://localhost:1313/th/tags/myth/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/blog/2025/02/28/sodamint/</loc>
+    <loc>http://localhost:1313/th/blog/2025/02/28/sodamint/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/blog/sodamint/</loc>
+    <loc>http://localhost:1313/th/en/blog/sodamint/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/blog/sodamint/</loc>
+    <loc>http://localhost:1313/th/th/blog/sodamint/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/news/fellow-2568/</loc>
+    <loc>http://localhost:1313/th/news/fellow-2568/</loc>
     <lastmod>2024-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/news/fellow-2568/</loc>
+    <loc>http://localhost:1313/th/th/news/fellow-2568/</loc>
     <lastmod>2024-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/about/</loc>
+    <loc>http://localhost:1313/th/en/about/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/authors/john-doe/</loc>
+    <loc>http://localhost:1313/th/authors/john-doe/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/authors/kavee-limbutara/</loc>
+    <loc>http://localhost:1313/th/authors/kavee-limbutara/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/authors/kl/</loc>
+    <loc>http://localhost:1313/th/authors/kl/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/research/test/</loc>
+    <loc>http://localhost:1313/th/en/research/test/</loc>
     <lastmod>2021-08-01T21:29:20+02:00</lastmod>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/about/</loc>
+    <loc>http://localhost:1313/th/about/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/about/</loc>
+    <loc>http://localhost:1313/th/th/about/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/service/</loc>
+    <loc>http://localhost:1313/th/en/service/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/contact/</loc>
+    <loc>http://localhost:1313/th/en/contact/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/education/</loc>
+    <loc>http://localhost:1313/th/education/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/service/hemodialysis/</loc>
+    <loc>http://localhost:1313/th/service/hemodialysis/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/service/hemodialysis/</loc>
+    <loc>http://localhost:1313/th/th/service/hemodialysis/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/member/</loc>
+    <loc>http://localhost:1313/th/en/member/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/education/curriculum/</loc>
+    <loc>http://localhost:1313/th/en/education/curriculum/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/news/</loc>
+    <loc>http://localhost:1313/th/en/news/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/service/peritoneal-dialysis/</loc>
+    <loc>http://localhost:1313/th/service/peritoneal-dialysis/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/service/peritoneal-dialysis/</loc>
+    <loc>http://localhost:1313/th/th/service/peritoneal-dialysis/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/en/personnel/</loc>
+    <loc>http://localhost:1313/th/en/personnel/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/member/</loc>
+    <loc>http://localhost:1313/th/member/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/member/</loc>
+    <loc>http://localhost:1313/th/th/member/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/service/transplant/</loc>
+    <loc>http://localhost:1313/th/service/transplant/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/service/transplant/</loc>
+    <loc>http://localhost:1313/th/th/service/transplant/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/research/</loc>
+    <loc>http://localhost:1313/th/research/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/research/</loc>
+    <loc>http://localhost:1313/th/th/research/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/contact/</loc>
+    <loc>http://localhost:1313/th/contact/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/contact/</loc>
+    <loc>http://localhost:1313/th/th/contact/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/service/</loc>
+    <loc>http://localhost:1313/th/service/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/service/</loc>
+    <loc>http://localhost:1313/th/th/service/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/personnel/</loc>
+    <loc>http://localhost:1313/th/personnel/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/personnel/</loc>
+    <loc>http://localhost:1313/th/th/personnel/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/education/curriculum/</loc>
+    <loc>http://localhost:1313/th/education/curriculum/</loc>
   </url><url>
-    <loc>https://www.vajirakidney.org/th/th/education/curriculum/</loc>
+    <loc>http://localhost:1313/th/th/education/curriculum/</loc>
   </url>
 </urlset>

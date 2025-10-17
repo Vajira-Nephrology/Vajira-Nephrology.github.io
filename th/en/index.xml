@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ens on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>https://www.vajirakidney.org/th/en/</link>
+    <link>http://localhost:1313/th/en/</link>
     <description>Recent content in Ens on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
     <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate>
-    <atom:link href="https://www.vajirakidney.org/th/en/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/th/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Us</title>
-      <link>https://www.vajirakidney.org/th/en/about/</link>
+      <link>http://localhost:1313/th/en/about/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/about/</guid>
+      <guid>http://localhost:1313/th/en/about/</guid>
       <description>&lt;p&gt;The Division of Nephrology and Renal Replacement Therapy at Vajira Hospital delivers comprehensive kidney care, research, and education. We coordinate multidisciplinary services for patients across every stage of kidney disease while training the next generation of nephrologists and nurses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-do&#34;&gt;What We Do&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Provide inpatient and outpatient nephrology consultations&lt;/li&gt;&#xA;&lt;li&gt;Operate dialysis programs that cover hemodialysis and peritoneal dialysis&lt;/li&gt;&#xA;&lt;li&gt;Run transplant evaluation and post-transplant clinics&lt;/li&gt;&#xA;&lt;li&gt;Support research that advances kidney care in Thailand&lt;/li&gt;&#xA;&lt;li&gt;Educate medical students, residents, and fellows through structured curricula&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Our team continues to expand clinical services, academic collaborations, and community outreach so that patients receive high-quality kidney care close to home.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Research Highlights</title>
-      <link>https://www.vajirakidney.org/th/en/research/test/</link>
+      <link>http://localhost:1313/th/en/research/test/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/research/test/</guid>
+      <guid>http://localhost:1313/th/en/research/test/</guid>
       <description>&lt;p&gt;We showcase collaborative studies that improve outcomes for patients with kidney disease. Topics include chronic kidney disease epidemiology, dialysis quality improvement, transplant medicine, and patient-centered innovations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Clinical Services</title>
-      <link>https://www.vajirakidney.org/th/en/service/</link>
+      <link>http://localhost:1313/th/en/service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/service/</guid>
-      <description>&lt;p&gt;Our division provides comprehensive renal services that cover prevention, acute care, and long-term treatment for patients with kidney disease. Explore individual services below for more details.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.vajirakidney.org/en/service/hemodialysis/&#34;&gt;Hemodialysis&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/th/en/service/</guid>
+      <description>&lt;p&gt;Our division provides comprehensive renal services that cover prevention, acute care, and long-term treatment for patients with kidney disease. Explore individual services below for more details.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/en/service/hemodialysis/&#34;&gt;Hemodialysis&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact Us</title>
-      <link>https://www.vajirakidney.org/th/en/contact/</link>
+      <link>http://localhost:1313/th/en/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/contact/</guid>
+      <guid>http://localhost:1313/th/en/contact/</guid>
       <description>&lt;h3 id=&#34;division-of-nephrology-and-renal-replacement-therapy-faculty-of-medicine-vajira-hospital&#34;&gt;Division of Nephrology and Renal Replacement Therapy, Faculty of Medicine Vajira Hospital&lt;/h3&gt;&#xA;&lt;p&gt;2nd Floor, Phetcharat Building&lt;br&gt;&#xA;681 Samsen Road, Wachira Phayaban Subdistrict, Dusit District, Bangkok 10300&lt;br&gt;&#xA;Phone: 02-244-3482&lt;br&gt;&#xA;Email: &lt;a href=&#34;mailto:opd.nep@nmu.ac.th&#34;&gt;opd.nep@nmu.ac.th&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Hours: Monday–Friday, 08:00–16:00 (closed on weekends and public holidays)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://maps.app.goo.gl/5EzwNDjRX6LMDtaQ6&#34;&gt;View map&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;facebook-page&#34;&gt;Facebook Page&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.facebook.com/KidneyVajira&#34;&gt;https://www.facebook.com/KidneyVajira&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;For additional enquiries, please complete the form below.&lt;/p&gt;&#xA;&#xA;&lt;form action=&#34;https://formspree.io/f/xanbwdbw&#34; method=&#34;POST&#34;&gt;&#xA;  &lt;p&gt;&#xA;    &lt;label for=&#34;name&#34;&gt;ชื่อ‑นามสกุล&lt;/label&gt;&lt;br&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; required&gt;&#xA;  &lt;/p&gt;&#xA;&#xA;  &lt;p&gt;&#xA;    &lt;label for=&#34;email&#34;&gt;อีเมล&lt;/label&gt;&lt;br&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;_replyto&#34; required&gt;&#xA;  &lt;/p&gt;&#xA;&#xA;  &lt;p&gt;&#xA;    &lt;label for=&#34;subject&#34;&gt;หัวข้อ&lt;/label&gt;&lt;br&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34;&gt;&#xA;  &lt;/p&gt;&#xA;&#xA;  &lt;p&gt;&#xA;    &lt;label for=&#34;message&#34;&gt;ข้อความ&lt;/label&gt;&lt;br&gt;&#xA;    &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;5&#34; required&gt;&lt;/textarea&gt;&#xA;  &lt;/p&gt;&#xA;&#xA;  &#xA;  &lt;p style=&#34;display:none;&#34;&gt;&#xA;    &lt;label&gt;Leave this field blank&lt;/label&gt;&#xA;    &lt;input type=&#34;text&#34; name=&#34;_honeypot&#34;&gt;&#xA;  &lt;/p&gt;&#xA;&#xA;  &lt;p&gt;&#xA;    &lt;button type=&#34;submit&#34;&gt;ส่งข้อความ&lt;/button&gt;&#xA;  &lt;/p&gt;&#xA;&lt;/form&gt;</description>
     </item>
     <item>
       <title>Member Portal</title>
-      <link>https://www.vajirakidney.org/th/en/member/</link>
+      <link>http://localhost:1313/th/en/member/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/member/</guid>
+      <guid>http://localhost:1313/th/en/member/</guid>
       <description>&lt;p&gt;This section is reserved for internal documents and requires authentication.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nephrology Fellowship Curriculum</title>
-      <link>https://www.vajirakidney.org/th/en/education/curriculum/</link>
+      <link>http://localhost:1313/th/en/education/curriculum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.vajirakidney.org/th/en/education/curriculum/</guid>
+      <guid>http://localhost:1313/th/en/education/curriculum/</guid>
       <description>&lt;h2 id=&#34;nephrology-fellowship-curriculum&#34;&gt;Nephrology Fellowship Curriculum&lt;/h2&gt;&#xA;&lt;p&gt;Our curriculum equips fellows with the clinical judgement and procedural skills required to care for patients with kidney disease across the continuum of care. The program blends bedside teaching, simulation-based training, and structured didactic sessions delivered by faculty specialists.&lt;/p&gt;&#xA;&lt;p&gt;Key rotations cover acute kidney injury, chronic kidney disease clinics, dialysis unit management, kidney transplantation, and multidisciplinary conferences. Fellows also participate in research methodology workshops and quality improvement projects that address local needs.&lt;/p&gt;</description>
     </item>
   </channel>
