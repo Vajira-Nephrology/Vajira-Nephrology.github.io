@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/en/authors/</loc>
+    <loc>https://www.vajirakidney.org/en/authors/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="http://localhost:1313/th/authors/"
+                href="https://www.vajirakidney.org/th/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/authors/"
+                href="https://www.vajirakidney.org/en/authors/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/</loc>
+    <loc>https://www.vajirakidney.org/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="http://localhost:1313/th/categories/"
+                href="https://www.vajirakidney.org/th/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/"
+                href="https://www.vajirakidney.org/en/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
+    <loc>https://www.vajirakidney.org/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="http://localhost:1313/th/tags/"
+                href="https://www.vajirakidney.org/th/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/"
+                href="https://www.vajirakidney.org/en/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/</loc>
+    <loc>https://www.vajirakidney.org/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="th"
-                href="http://localhost:1313/th/"
+                href="https://www.vajirakidney.org/th/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/"
+                href="https://www.vajirakidney.org/en/"
                 />
   </url>
 </urlset>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>KL on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</title>
-    <link>http://localhost:1313/th/authors/kl/</link>
+    <link>https://www.vajirakidney.org/th/authors/kl/</link>
     <description>Recent content in KL on สาขาวิชาโรคไตและการบำบัดทดแทนไต วชิรพยาบาล</description>
     <generator>Hugo</generator>
     <language>th</language>
     <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/th/authors/kl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.vajirakidney.org/th/authors/kl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Us</title>
-      <link>http://localhost:1313/th/en/about/</link>
+      <link>https://www.vajirakidney.org/th/en/about/</link>
       <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
-      <guid>http://localhost:1313/th/en/about/</guid>
+      <guid>https://www.vajirakidney.org/th/en/about/</guid>
       <description>&lt;p&gt;The Division of Nephrology and Renal Replacement Therapy at Vajira Hospital delivers comprehensive kidney care, research, and education. We coordinate multidisciplinary services for patients across every stage of kidney disease while training the next generation of nephrologists and nurses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-do&#34;&gt;What We Do&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Provide inpatient and outpatient nephrology consultations&lt;/li&gt;&#xA;&lt;li&gt;Operate dialysis programs that cover hemodialysis and peritoneal dialysis&lt;/li&gt;&#xA;&lt;li&gt;Run transplant evaluation and post-transplant clinics&lt;/li&gt;&#xA;&lt;li&gt;Support research that advances kidney care in Thailand&lt;/li&gt;&#xA;&lt;li&gt;Educate medical students, residents, and fellows through structured curricula&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Our team continues to expand clinical services, academic collaborations, and community outreach so that patients receive high-quality kidney care close to home.&lt;/p&gt;</description>
     </item>
   </channel>
