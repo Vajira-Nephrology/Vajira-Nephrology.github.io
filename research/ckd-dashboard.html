@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VjRCKD Cohort Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow reading column; summary tiles first, then one chart per question, tables behind each chart. */
+:root{
+  --bg:#f5f6f3; --surface:#fcfcfb; --ink:#1d2623; --muted:#5d6a66; --line:#d9ddd8; --grid:#e6e9e4;
+  --accent:#1f6f8b; --accent-ink:#ffffff; --chip-off:#eceee9;
+  --c1:#1b9e77; --c2:#7570b3; --c3:#d95f02;
+  --s1:#2f6fb0; --s2:#c28a1d; --s3:#4a4f57; --s4:#b9bec6;
+  --good:#1b7f5c; --warn:#a9680b;
+  --font-display:'Newsreader',Georgia,'Times New Roman',serif;
+  --font-body:'Public Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121615; --surface:#181c1b; --ink:#e7ece9; --muted:#9aa7a2; --line:#2c3331; --grid:#242a28;
+    --accent:#5ab0cc; --accent-ink:#0c1112; --chip-off:#222826;
+    --c1:#2fa77f; --c2:#8d86dc; --c3:#dd6d2a;
+    --s1:#5a95d4; --s2:#d6a23f; --s3:#8a919b; --s4:#4a5058;
+    --good:#4fc79c; --warn:#e0a553; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121615; --surface:#181c1b; --ink:#e7ece9; --muted:#9aa7a2; --line:#2c3331; --grid:#242a28;
+  --accent:#5ab0cc; --accent-ink:#0c1112; --chip-off:#222826;
+  --c1:#2fa77f; --c2:#8d86dc; --c3:#dd6d2a;
+  --s1:#5a95d4; --s2:#d6a23f; --s3:#8a919b; --s4:#4a5058;
+  --good:#4fc79c; --warn:#e0a553; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1040px;margin-inline:auto}
+header.top{padding-block:28px 8px}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,5vw,40px);line-height:1.12;margin:0 0 10px;text-wrap:balance}
+.lead{max-width:68ch;color:var(--muted);margin:0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-top:18px;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin}
+nav.tabs button{font:inherit;font-weight:500;color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:12px 14px;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs button:hover{color:var(--ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section.panel{padding-block:24px 8px}
+h2{font-family:var(--font-display);font-weight:600;font-size:24px;margin:0 0 6px;text-wrap:balance}
+h3{font-size:15px;font-weight:600;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 16px;max-width:70ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0}
+.kpi .v{font-family:var(--font-display);font-size:32px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:13px;color:var(--muted);margin-top:4px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:20px;min-width:0}
+.cardhead{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.cardhead p{margin:0;color:var(--muted);font-size:13px;max-width:62ch}
+.tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;background:var(--surface);color:var(--muted);border:0;padding:5px 11px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{font:inherit;font-size:13px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 11px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.chip{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--chip-off);color:var(--muted);border-radius:999px;padding:4px 12px 4px 9px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--surface);color:var(--ink);border-color:var(--ink)}
+.chip i{width:11px;height:11px;border-radius:50%;display:inline-block;background:var(--muted)}
+.chart{position:relative;width:100%}
+.chart svg{display:block;max-width:100%;overflow:visible}
+svg text{font-family:var(--font-body)}
+.grid{stroke:var(--grid);stroke-width:1}
+.axis{stroke:var(--line);stroke-width:1}
+.tick{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.axlab{fill:var(--muted);font-size:12px}
+.dlabel{font-size:12px;font-weight:600}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;line-height:1.45;padding:7px 10px;border-radius:5px;z-index:4;max-width:260px;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.tip b{font-weight:600}
+.tip .r{display:flex;gap:6px;align-items:center;white-space:nowrap}
+.tip .r i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--muted);font-size:12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.stat{border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:var(--surface)}
+.stat .t{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stat .big{font-family:var(--font-display);font-size:28px;font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums}
+.stat p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.note{border-left:3px solid var(--warn);background:var(--surface);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13.5px;color:var(--ink);margin:0 0 20px;max-width:78ch}
+.methods h3{margin-top:18px}
+.methods ul{padding-left:20px;margin:6px 0 0;max-width:78ch}
+.methods li{margin-bottom:5px}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;max-width:78ch}
+@media (max-width:560px){ .kpi .v{font-size:27px} nav.tabs button{padding:11px 11px} }
+@media (prefers-reduced-motion:no-preference){ .tip{transition:opacity .08s} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Chronic kidney disease clinic cohort</p>
+    <h1>VjRCKD cohort dashboard</h1>
+    <p class="lead" id="lead"></p>
+    <nav class="tabs" role="tablist" aria-label="Dashboard sections" id="tabs"></nav>
+  </header>
+
+  <section class="panel" id="overview" role="tabpanel" aria-label="Overview">
+    <h2>Who is in the cohort and what happened to them</h2>
+    <p class="sub" id="ov-sub"></p>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Where patients stood at each yearly review</h3><p>Every enrolled patient is placed in one group each year. Dialysis and death are counted once they have happened. There is no 2022 (BE 2565) review in the source records.</p></div><div class="tools" data-for="flow"></div></div>
+      <div class="chart" id="flow-chart"></div>
+      <div class="tablewrap" id="flow-table" hidden></div>
+      <div class="legend" id="flow-legend"></div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Starting kidney function</h3><p>Groups are defined by the eGFR at enrolment. Groups with fewer than 10 patients are merged, so stage G2 and G3a are shown together.</p></div><div class="tools" data-for="base"></div></div>
+      <div class="tablewrap" id="base-table"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="trajectory" role="tabpanel" aria-label="eGFR over time" hidden>
+    <h2>How eGFR changes over follow-up</h2>
+    <p class="sub">eGFR (mL/min/1.73 m²) by years since enrolment, grouped by the eGFR at enrolment.</p>
+    <div class="chips" id="chips-traj"></div>
+    <div class="card">
+      <div class="cardhead"><div><h3 id="traj-title"></h3><p id="traj-desc"></p></div>
+        <div class="tools"><div class="seg" id="traj-mode"><button data-m="observed" aria-pressed="true">Observed</button><button data-m="model" aria-pressed="false">Model trend</button></div><span data-for="traj" class="tools"></span></div></div>
+      <div class="chart" id="traj-chart"></div>
+      <div class="tablewrap" id="traj-table" hidden></div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Average yearly decline from the model</h3><p>Linear mixed model: each patient has their own starting level and their own slope. Decline is the average fall in eGFR per year. Individual slopes vary much more than the group averages do.</p></div><div class="tools" data-for="model"></div></div>
+      <div class="tablewrap" id="model-table"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="decline" role="tabpanel" aria-label="Rate of decline" hidden>
+    <h2>How fast does eGFR fall for each patient?</h2>
+    <p class="sub">Each patient's rate is (first eGFR − last eGFR) ÷ years between them, for patients followed at least one year. A positive number is a fall. A rate of 4 mL/min/1.73 m² per year or less is counted as slower decline.</p>
+    <div class="stats" id="decl-stats"></div>
+    <div style="height:20px"></div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Distribution of yearly decline</h3><p id="hist-desc"></p></div><div class="tools" data-for="hist"></div></div>
+      <div class="chart" id="hist-chart"></div>
+      <div class="tablewrap" id="hist-table" hidden></div>
+      <div class="legend"><span><i style="background:var(--c1)"></i>Decline of 4 or less per year</span><span><i style="background:var(--s2)"></i>Decline of more than 4 per year</span></div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Share declining 4 or less per year, by starting eGFR</h3><p>All patients followed at least one year.</p></div><div class="tools" data-for="pct"></div></div>
+      <div class="chart" id="pct-chart"></div>
+      <div class="tablewrap" id="pct-table" hidden></div>
+    </div>
+    <p class="note" id="decl-note"></p>
+  </section>
+
+  <section class="panel" id="survival" role="tabpanel" aria-label="Death or dialysis" hidden>
+    <h2>Time to death or dialysis</h2>
+    <p class="sub">Kaplan-Meier estimate of the chance of still being alive and not on hemodialysis or peritoneal dialysis, counted from enrolment. Patients lost to follow-up are censored at their last eGFR.</p>
+    <div class="chips" id="chips-km"></div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Alive and free of dialysis</h3><p>Curves stop when fewer than 10 patients remain at risk. Shaded bands are approximate 95% confidence intervals.</p></div><div class="tools" data-for="km"></div></div>
+      <div class="chart" id="km-chart"></div>
+      <div class="tablewrap" id="km-table" hidden></div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><div><h3>Estimates by starting eGFR</h3><p>Percent free of death or dialysis at 1, 3 and 5 years, with 95% confidence interval.</p></div><div class="tools" data-for="kmest"></div></div>
+      <div class="tablewrap" id="kmest-table"></div>
+    </div>
+    <p class="note" id="km-note"></p>
+  </section>
+
+  <section class="panel methods" id="methods" role="tabpanel" aria-label="Methods and data" hidden>
+    <h2>Methods, definitions and limits</h2>
+    <h3>Data source and cleaning</h3>
+    <ul>
+      <li>Yearly clinic review lists from the VjRCKD project (sheets for 2564 and 2566 to 2569 BE, plus the registry of everyone enrolled by 2564). No sheet exists for 2565 BE.</li>
+      <li>Dates were recorded in the Buddhist Era and sometimes mixed with the Christian Era or mistyped. They were converted to CE and corrected where the intended date was clear. The few uncertain dates are logged.</li>
+      <li>The same hospital number listed twice was treated as one patient. Rows copied forward from an earlier year with no new date or eGFR are not counted as new visits.</li>
+      <li>Free-text notes were turned into one status: attending (F/U), death, hemodialysis, peritoneal dialysis, lost to follow-up, refused renal replacement, or out of clinic.</li>
+    </ul>
+    <h3>Definitions</h3>
+    <ul>
+      <li><b>Starting eGFR groups:</b> 45 or more (stage G2–G3a), 30 to 44 (G3b), under 30 (G4–G5).</li>
+      <li><b>Attending:</b> a new eGFR recorded in that year and status F/U.</li>
+      <li><b>Not followed:</b> lost to follow-up, out of clinic, refused dialysis, or no new eGFR that year.</li>
+      <li><b>Death or dialysis:</b> whichever came first. Many dialysis dates are the last clinic visit before dialysis, not the exact start.</li>
+    </ul>
+    <h3>Privacy</h3>
+    <ul>
+      <li>This page holds summary numbers only. It contains no names, hospital numbers, patient codes or row-level data.</li>
+      <li>Any group with fewer than 10 patients is hidden or merged. Counts below 10 appear as "&lt;10".</li>
+    </ul>
+    <h3>Limits to keep in mind</h3>
+    <ul>
+      <li><b>Survivors only at later times.</b> Patients who died or started dialysis leave the eGFR trend, so late values look better than they would for everyone.</li>
+      <li><b>Lost to follow-up is not random.</b> Some of these patients may have died or started dialysis elsewhere. The survival estimates assume they carry the same risk as those still attending.</li>
+      <li><b>Regression to the mean.</b> Groups are set by the first eGFR, so the highest group tends to appear to fall faster partly by chance.</li>
+      <li><b>Small groups.</b> Estimates for the 45-or-more group rest on 34 patients and have wide intervals.</li>
+      <li>Observational data from one clinic. Results describe this cohort and are not medical advice.</li>
+    </ul>
+  </section>
+
+  <footer>Cohort enrolled <span id="f-enrol"></span>; reviews through <span id="f-to"></span>. Years in brackets are Buddhist Era (BE).</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = {"min_cell":10,"groups":["≥45 (G2–G3a)","30–44 (G3b)","<30 (G4–G5)"],"overview":{"patients":234,"person_years":1029,"followup_years_median":4.6,"followup_years_q1":1.7,"followup_years_q3":6.5,"died":34,"dialysis":25,"attending_2569":85,"enrol_first":"2016-10","enrol_last":"2021-07","data_to":"2026-10","females":122,"males":104},"baseline":[{"group":"≥45 (G2–G3a)","n":34,"mean":53.47,"sd":9.75,"median":50.0,"q1":47.0,"q3":56.5},{"group":"30–44 (G3b)","n":94,"mean":36.79,"sd":4.32,"median":37.0,"q1":33.25,"q3":40.0},{"group":"<30 (G4–G5)","n":106,"mean":22.11,"sd":5.56,"median":23.0,"q1":18.0,"q3":27.0}],"flow":[{"fy_be":2564,"fy_ce":2021,"attending":165,"died":18,"dialysis":13,"not_followed":38},{"fy_be":2566,"fy_ce":2023,"attending":143,"died":22,"dialysis":13,"not_followed":56},{"fy_be":2567,"fy_ce":2024,"attending":113,"died":32,"dialysis":21,"not_followed":68},{"fy_be":2568,"fy_ce":2025,"attending":105,"died":32,"dialysis":22,"not_followed":75},{"fy_be":2569,"fy_ce":2026,"attending":85,"died":34,"dialysis":25,"not_followed":90}],"trajectory":{"≥45 (G2–G3a)":[{"year":0,"n":34,"median":50.0,"q1":47.0,"q3":56.5},{"year":1,"n":13,"median":47.2,"q1":45.0,"q3":55.0},{"year":2,"n":12,"median":52.0,"q1":41.9,"q3":62.8},{"year":3,"n":13,"median":49.5,"q1":43.3,"q3":52.0},{"year":4,"n":17,"median":45.5,"q1":39.1,"q3":53.0},{"year":5,"n":17,"median":40.7,"q1":35.6,"q3":48.8},{"year":6,"n":16,"median":37.7,"q1":31.9,"q3":55.8},{"year":7,"n":13,"median":32.8,"q1":31.0,"q3":51.2},{"year":8,"n":null,"median":null,"q1":null,"q3":null},{"year":9,"n":null,"median":null,"q1":null,"q3":null}],"30–44 (G3b)":[{"year":0,"n":94,"median":37.0,"q1":33.2,"q3":40.0},{"year":1,"n":49,"median":36.8,"q1":31.4,"q3":42.0},{"year":2,"n":32,"median":35.8,"q1":28.4,"q3":41.6},{"year":3,"n":35,"median":32.1,"q1":26.8,"q3":38.6},{"year":4,"n":53,"median":30.1,"q1":25.7,"q3":40.3},{"year":5,"n":50,"median":31.9,"q1":28.1,"q3":41.2},{"year":6,"n":42,"median":30.4,"q1":26.9,"q3":42.4},{"year":7,"n":27,"median":34.4,"q1":27.1,"q3":45.0},{"year":8,"n":null,"median":null,"q1":null,"q3":null},{"year":9,"n":null,"median":null,"q1":null,"q3":null}],"<30 (G4–G5)":[{"year":0,"n":106,"median":23.0,"q1":18.0,"q3":27.0},{"year":1,"n":47,"median":19.0,"q1":11.0,"q3":28.9},{"year":2,"n":35,"median":18.8,"q1":11.4,"q3":22.9},{"year":3,"n":30,"median":14.6,"q1":10.1,"q3":19.2},{"year":4,"n":42,"median":20.1,"q1":11.1,"q3":26.7},{"year":5,"n":40,"median":17.0,"q1":10.6,"q3":26.4},{"year":6,"n":28,"median":18.6,"q1":12.8,"q3":26.7},{"year":7,"n":17,"median":18.2,"q1":14.9,"q3":30.3},{"year":8,"n":null,"median":null,"q1":null,"q3":null},{"year":9,"n":null,"median":null,"q1":null,"q3":null}]},"mixed_model":{"≥45 (G2–G3a)":{"patients":34,"n_values":151,"intercept":54.0,"decline":1.33,"ci_low":0.31,"ci_high":2.35,"sd_slope":2.21,"x":[0.0,0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3.0,3.3,3.6,3.9,4.2,4.5,4.8,5.1,5.4,5.7,6.0,6.3,6.6,6.9,7.2,7.5,7.8,8.1,8.4,8.7,9.0],"y":[54.03,53.63,53.23,52.83,52.43,52.03,51.63,51.23,50.83,50.43,50.03,49.63,49.23,48.83,48.43,48.03,47.63,47.24,46.84,46.44,46.04,45.64,45.24,44.84,44.44,44.04,43.64,43.24,42.84,42.44,42.04],"lo":[50.88,50.52,50.14,49.72,49.27,48.8,48.3,47.77,47.22,46.65,46.07,45.47,44.86,44.24,43.61,42.97,42.33,41.67,41.02,40.36,39.69,39.02,38.35,37.67,37.0,36.32,35.64,34.95,34.27,33.58,32.89],"hi":[57.18,56.74,56.32,55.94,55.59,55.26,54.97,54.69,54.44,54.21,53.99,53.79,53.6,53.43,53.26,53.1,52.94,52.8,52.65,52.52,52.38,52.25,52.12,52.0,51.88,51.76,51.64,51.53,51.41,51.3,51.19]},"30–44 (G3b)":{"patients":94,"n_values":416,"intercept":37.0,"decline":1.43,"ci_low":0.74,"ci_high":2.11,"sd_slope":2.8,"x":[0.0,0.29,0.58,0.87,1.16,1.44,1.73,2.02,2.31,2.6,2.89,3.18,3.47,3.76,4.04,4.33,4.62,4.91,5.2,5.49,5.78,6.07,6.36,6.64,6.93,7.22,7.51,7.8,8.09,8.38,8.67],"y":[36.96,36.55,36.13,35.72,35.31,34.9,34.49,34.07,33.66,33.25,32.84,32.43,32.02,31.6,31.19,30.78,30.37,29.96,29.55,29.13,28.72,28.31,27.9,27.49,27.08,26.66,26.25,25.84,25.43,25.02,24.61],"lo":[35.85,35.43,34.98,34.5,33.99,33.46,32.91,32.35,31.79,31.21,30.63,30.05,29.46,28.87,28.27,27.68,27.08,26.48,25.88,25.28,24.68,24.07,23.47,22.87,22.26,21.66,21.05,20.45,19.84,19.24,18.63],"hi":[38.07,37.66,37.29,36.95,36.63,36.34,36.06,35.8,35.54,35.29,35.05,34.81,34.58,34.34,34.11,33.89,33.66,33.44,33.21,32.99,32.77,32.55,32.33,32.11,31.89,31.67,31.45,31.23,31.02,30.8,30.58]},"<30 (G4–G5)":{"patients":106,"n_values":371,"intercept":22.5,"decline":1.91,"ci_low":1.33,"ci_high":2.5,"sd_slope":2.2,"x":[0.0,0.29,0.58,0.87,1.16,1.45,1.74,2.03,2.32,2.61,2.9,3.19,3.49,3.78,4.07,4.36,4.65,4.94,5.23,5.52,5.81,6.1,6.39,6.68,6.97,7.26,7.55,7.84,8.13,8.42,8.71],"y":[22.45,21.9,21.34,20.79,20.23,19.68,19.12,18.56,18.01,17.45,16.9,16.34,15.79,15.23,14.67,14.12,13.56,13.01,12.45,11.89,11.34,10.78,10.23,9.67,9.12,8.56,8.0,7.45,6.89,6.34,5.78],"lo":[21.15,20.53,19.9,19.25,18.59,17.92,17.24,16.55,15.86,15.16,14.46,13.76,13.05,12.35,11.64,10.92,10.21,9.5,8.78,8.07,7.35,6.63,5.91,5.19,4.47,3.76,3.03,2.31,1.59,0.87,0.15],"hi":[23.76,23.27,22.79,22.33,21.88,21.43,21.0,20.58,20.16,19.74,19.33,18.92,18.52,18.11,17.71,17.31,16.91,16.52,16.12,15.72,15.33,14.93,14.54,14.15,13.76,13.36,12.97,12.58,12.19,11.8,11.41]}},"decline":{"all":{"n":198,"pct_le4":80.8,"mean":1.41,"sd":5.02,"median":1.91,"q1":-0.08,"q3":3.42},"attending_2569":{"n":85,"pct_le4":95.3,"mean":0.84,"sd":2.0,"median":0.83,"q1":-0.66,"q3":2.14},"hist":[{"bin":"< −2","n":22},{"bin":"−2 to 0","n":31},{"bin":"0 to 2","n":52},{"bin":"2 to 4","n":55},{"bin":"4 to 6","n":19},{"bin":"≥ 6","n":19}],"by_group":[{"group":"≥45 (G2–G3a)","n":29,"pct_le4":86.2,"median":2.2},{"group":"30–44 (G3b)","n":82,"pct_le4":82.9,"median":1.14},{"group":"<30 (G4–G5)","n":87,"pct_le4":77.0,"median":2.03}]},"km":{"≥45 (G2–G3a)":{"n":34,"events":0,"person_years":172,"rate_per100py":0.0,"t":[0.0,0.25,0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5,2.75,3.0,3.25,3.5,3.75,4.0,4.25,4.5,4.75,5.0,5.25,5.5,5.75,6.0,6.25,6.5,6.75,7.0,7.25,7.5,7.75,8.0,8.25,8.5,8.75,9.0],"s":[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,null,null,null,null,null,null,null,null,null,null],"lo":[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,null,null,null,null,null,null,null,null,null,null],"hi":[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,null,null,null,null,null,null,null,null,null,null],"at_risk":{"0":34,"2":26,"4":23,"6":18,"8":null},"est":{"1":[100,100,100],"3":[100,100,100],"5":[100,100,100]}},"30–44 (G3b)":{"n":94,"events":18,"person_years":448,"rate_per100py":4.0,"t":[0.0,0.25,0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5,2.75,3.0,3.25,3.5,3.75,4.0,4.25,4.5,4.75,5.0,5.25,5.5,5.75,6.0,6.25,6.5,6.75,7.0,7.25,7.5,7.75,8.0,8.25,8.5,8.75,9.0],"s":[1.0,1.0,0.989,0.966,0.966,0.966,0.954,0.929,0.929,0.929,0.929,0.929,0.917,0.917,0.903,0.876,0.833,0.804,0.804,0.804,0.804,0.804,0.804,0.787,0.769,0.769,0.769,0.769,0.769,0.769,null,null,null,null,null,null,null],"lo":[1.0,1.0,0.968,0.928,0.928,0.928,0.91,0.875,0.875,0.875,0.875,0.875,0.857,0.857,0.839,0.803,0.75,0.714,0.714,0.714,0.714,0.714,0.714,0.694,0.67,0.67,0.67,0.67,0.67,0.67,null,null,null,null,null,null,null],"hi":[1.0,1.0,1.0,1.0,1.0,1.0,0.998,0.984,0.984,0.984,0.984,0.984,0.976,0.976,0.967,0.948,0.917,0.894,0.894,0.894,0.894,0.894,0.894,0.881,0.867,0.867,0.867,0.867,0.867,0.867,null,null,null,null,null,null,null],"at_risk":{"0":94,"2":73,"4":58,"6":41,"8":null},"est":{"1":[97,93,100],"3":[92,86,98],"5":[80,71,89]}},"<30 (G4–G5)":{"n":106,"events":41,"person_years":409,"rate_per100py":10.0,"t":[0.0,0.25,0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5,2.75,3.0,3.25,3.5,3.75,4.0,4.25,4.5,4.75,5.0,5.25,5.5,5.75,6.0,6.25,6.5,6.75,7.0,7.25,7.5,7.75,8.0,8.25,8.5,8.75,9.0],"s":[1.0,0.99,0.97,0.95,0.919,0.887,0.865,0.842,0.842,0.83,0.807,0.783,0.759,0.747,0.721,0.694,0.694,0.68,0.667,0.624,0.594,0.594,0.594,0.594,0.594,0.572,0.547,0.508,0.465,null,null,null,null,null,null,null,null],"lo":[1.0,0.971,0.937,0.906,0.864,0.824,0.797,0.769,0.769,0.754,0.727,0.699,0.671,0.657,0.627,0.597,0.597,0.581,0.566,0.519,0.485,0.485,0.485,0.485,0.485,0.459,0.429,0.376,0.321,null,null,null,null,null,null,null,null],"hi":[1.0,1.0,1.0,0.993,0.973,0.95,0.933,0.916,0.916,0.906,0.888,0.868,0.848,0.837,0.815,0.792,0.792,0.78,0.767,0.729,0.702,0.702,0.702,0.702,0.702,0.684,0.664,0.639,0.61,null,null,null,null,null,null,null,null],"at_risk":{"0":106,"2":72,"4":50,"6":27,"8":null},"est":{"1":[92,86,97],"3":[76,67,85],"5":[59,49,70]}}}};
+const NS = 'http://www.w3.org/2000/svg';
+const G = D.groups, GC = ['var(--c1)','var(--c2)','var(--c3)'];
+const GSHORT = ['45 or more','30–44','Under 30'];
+const state = { vis:[true,true,true], mode:'observed', tab:'overview', view:{} };
+const $ = id => document.getElementById(id);
+const f0 = v => Number(v).toLocaleString('en-US',{maximumFractionDigits:0});
+const f1 = v => Number(v).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+const f2 = v => Number(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const cnt = v => v==null ? '<10' : f0(v);
+function S(tag, attrs, parent){ const e=document.createElementNS(NS,tag); for(const k in (attrs||{})) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; }
+function lin(d0,d1,r0,r1){ return v => r0 + (v-d0)/(d1-d0)*(r1-r0); }
+function frame(host, o){
+  host.querySelectorAll('svg').forEach(s=>s.remove());
+  const w = Math.max(280, Math.floor(host.clientWidth||320)), h = o.h||340, narrow = w<560;
+  const m = Object.assign({t:12,r:narrow?12:(o.rr||150),b:46,l:46}, o.m||{}); if(narrow) m.r = 12; if(o.ylabel && !(o.m&&o.m.l)) m.l = Math.max(m.l,56);
+  const svg = S('svg',{width:w,height:h,viewBox:`0 0 ${w} ${h}`,role:'img','aria-label':o.label||''},host);
+  const x = lin(o.xd[0],o.xd[1],m.l,w-m.r), y = lin(o.yd[0],o.yd[1],h-m.b,m.t);
+  (o.yticks||[]).forEach(t=>{ S('line',{class:'grid',x1:m.l,x2:w-m.r,y1:y(t),y2:y(t)},svg); const e=S('text',{class:'tick',x:m.l-8,y:y(t)+4,'text-anchor':'end'},svg); e.textContent=(o.yfmt||String)(t); });
+  S('line',{class:'axis',x1:m.l,x2:w-m.r,y1:h-m.b,y2:h-m.b},svg);
+  (o.xticks||[]).forEach(t=>{ const e=S('text',{class:'tick',x:x(t.v!=null?t.v:t),y:h-m.b+16,'text-anchor':'middle'},svg); e.textContent=t.l!=null?t.l:t; if(t.l2){ const e2=S('text',{class:'tick',x:x(t.v),y:h-m.b+29,'text-anchor':'middle'},svg); e2.textContent=t.l2; } });
+  if(o.xlabel){ const e=S('text',{class:'axlab',x:(m.l+w-m.r)/2,y:h-6,'text-anchor':'middle'},svg); e.textContent=o.xlabel; }
+  if(o.ylabel){ const e=S('text',{class:'axlab',transform:`translate(12 ${(m.t+h-m.b)/2}) rotate(-90)`,'text-anchor':'middle'},svg); e.textContent=o.ylabel; }
+  return {svg,x,y,w,h,m,narrow};
+}
+function path(pts,x,y){ return pts.map((p,i)=>(i?'L':'M')+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)).join(''); }
+function band(svg,up,lo,x,y,color,op){ const d=path(up,x,y)+lo.slice().reverse().map(p=>'L'+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)).join('')+'Z'; S('path',{d,style:`fill:${color};opacity:${op}`},svg); }
+function spread(items,gap,min,max){ items.sort((a,b)=>a.y-b.y); for(let i=1;i<items.length;i++) if(items[i].y-items[i-1].y<gap) items[i].y=items[i-1].y+gap; const over=items.length?items[items.length-1].y-max:0; if(over>0) items.forEach(it=>it.y-=over); items.forEach(it=>{ if(it.y<min) it.y=min; }); }
+function dlabels(fr,items){ if(fr.narrow) return; const arr=items.map(it=>({y:fr.y(it.yv),x:it.x,text:it.text,color:it.color})); spread(arr,15,fr.m.t+6,fr.h-fr.m.b-4); arr.forEach(it=>{ const t=S('text',{class:'dlabel',x:it.x+8,y:it.y+4,style:`fill:${it.color}`},fr.svg); t.textContent=it.text; }); }
+const tip=$('tip');
+function showTip(host,fr,px,html){ tip.hidden=false; tip.innerHTML=html; const hb=host.getBoundingClientRect(); const tw=tip.offsetWidth, th=tip.offsetHeight; let left=px+hb.left+window.scrollX+14, top=hb.top+window.scrollY+fr.m.t+6; if(left+tw>window.scrollX+document.documentElement.clientWidth-8) left=px+hb.left+window.scrollX-tw-14; tip.style.left=left+'px'; tip.style.top=top+'px'; }
+function hideTip(){ tip.hidden=true; }
+function hover(host,fr,fn){
+  const g=S('g',{},fr.svg); const line=S('line',{y1:fr.m.t,y2:fr.h-fr.m.b,style:'stroke:var(--muted);stroke-dasharray:3 3;opacity:0'},g);
+  const rect=S('rect',{x:fr.m.l,y:fr.m.t,width:fr.w-fr.m.l-fr.m.r,height:fr.h-fr.m.t-fr.m.b,fill:'transparent',style:'cursor:crosshair'},g);
+  function move(e){ const r=fr.svg.getBoundingClientRect(); const px=e.clientX-r.left; const res=fn(px); if(!res){ hideTip(); line.style.opacity=0; return; } line.setAttribute('x1',res.x); line.setAttribute('x2',res.x); line.style.opacity=1; showTip(host,fr,res.x,res.html); }
+  rect.addEventListener('pointermove',move); rect.addEventListener('pointerdown',move); rect.addEventListener('pointerleave',()=>{hideTip();line.style.opacity=0;});
+}
+const tipRow=(c,l,v)=>`<div class="r"><i style="background:${c}"></i><span>${l}</span><b style="margin-left:auto;padding-left:10px">${v}</b></div>`;
+
+/* ---------- tables, CSV, view toggles ---------- */
+const TABLES={};
+function table(id,head,rows,opt){ TABLES[id]={head,rows}; const el=$(id+'-table'); el.innerHTML='<table><thead><tr>'+head.map(h=>`<th>${h}</th>`).join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>`<td>${c}</td>`).join('')+'</tr>').join('')+'</tbody></table>'; }
+function csv(id){ const t=TABLES[id]; const clean=s=>String(s).replace(/<[^>]*>/g,'').replace(/&lt;/g,'<').replace(/&ge;/g,'≥').replace(/&nbsp;/g,' '); const q=s=>'"'+clean(s).replace(/"/g,'""')+'"'; return [t.head.map(q).join(',')].concat(t.rows.map(r=>r.map(q).join(','))).join('\n'); }
+function tools(){ document.querySelectorAll('[data-for]').forEach(h=>{ if(h.dataset.ready) return; h.dataset.ready=1; const id=h.dataset.for; const hasChart=!!$(id+'-chart'); let html=''; if(hasChart) html+=`<div class="seg" data-view="${id}"><button aria-pressed="true" data-v="chart">Chart</button><button aria-pressed="false" data-v="table">Table</button></div>`; html+=`<button class="btn" data-copy="${id}">Copy CSV</button>`; h.insertAdjacentHTML('beforeend',html); }); }
+document.addEventListener('click',e=>{
+  const v=e.target.closest('[data-view] button'); if(v){ const id=v.parentElement.dataset.view; const mode=v.dataset.v; v.parentElement.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===v))); $(id+'-chart').hidden=mode==='table'; $(id+'-table').hidden=mode==='chart'; if(mode==='chart') renderTab(state.tab); return; }
+  const c=e.target.closest('[data-copy]'); if(c){ const id=c.dataset.copy; const text=csv(id); const done=()=>{ const o=c.textContent; c.textContent='Copied'; setTimeout(()=>c.textContent=o,1400); }; try{ navigator.clipboard.writeText(text).then(done,()=>fallback(text,c)); }catch(err){ fallback(text,c);} }
+});
+function fallback(text,btn){ const ta=document.createElement('textarea'); ta.value=text; ta.style.cssText='position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); btn.textContent='Copied'; }catch(e){ btn.textContent='Select table'; } ta.remove(); }
+
+/* ---------- static text ---------- */
+const O=D.overview;
+$('lead').textContent=`Summary results from ${f0(O.patients)} patients enrolled from October 2016 to July 2021 and followed through October 2026 (BE 2569). Only grouped numbers are shown.`;
+$('ov-sub').textContent=`${f0(O.attending_2569)} of ${f0(O.patients)} patients were still attending with a new eGFR in 2026 (BE 2569). ${f0(O.died)} died and ${f0(O.dialysis)} started hemodialysis or peritoneal dialysis.`;
+$('f-enrol').textContent='Oct 2016 – Jul 2021'; $('f-to').textContent='Oct 2026';
+$('kpis').innerHTML=[
+ [f0(O.patients),'patients enrolled'],
+ [f0(O.person_years),'person-years of follow-up'],
+ [f1(O.followup_years_median)+' yr',`median follow-up (IQR ${f1(O.followup_years_q1)}–${f1(O.followup_years_q3)})`],
+ [f0(O.attending_2569),'attending in 2026 (BE 2569)'],
+ [f0(O.died)+' · '+f0(O.dialysis),'died · started dialysis']
+].map(k=>`<div class="kpi"><div class="v">${k[0]}</div><div class="l">${k[1]}</div></div>`).join('');
+$('tabs').innerHTML=[['overview','Overview'],['trajectory','eGFR over time'],['decline','Rate of decline'],['survival','Death or dialysis'],['methods','Methods and limits']].map(t=>`<button role="tab" id="tab-${t[0]}" data-tab="${t[0]}" aria-selected="false">${t[1]}</button>`).join('');
+['chips-traj','chips-km'].forEach(id=>{ $(id).innerHTML=G.map((g,i)=>`<button class="chip" data-g="${i}" aria-pressed="true"><i style="background:${GC[i]}"></i>${GSHORT[i]} <span style="color:var(--muted)">(n=${D.baseline[i].n})</span></button>`).join(''); });
+document.addEventListener('click',e=>{ const c=e.target.closest('.chip'); if(!c) return; const i=+c.dataset.g; const vis=state.vis.slice(); vis[i]=!vis[i]; if(!vis.some(Boolean)) return; state.vis=vis; document.querySelectorAll('.chip[data-g="'+i+'"]').forEach(b=>b.setAttribute('aria-pressed',String(vis[i]))); renderTab(state.tab); });
+$('traj-mode').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; state.mode=b.dataset.m; $('traj-mode').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); renderTab('trajectory'); });
+
+/* ---------- charts ---------- */
+const FLOWC=[['attending','Attending with new eGFR','var(--s1)'],['not_followed','Not followed or no new eGFR','var(--s4)'],['dialysis','Started dialysis','var(--s2)'],['died','Died','var(--s3)']];
+function drawFlow(){
+  const host=$('flow-chart'); const fr=frame(host,{h:340,xd:[0,D.flow.length],yd:[0,O.patients],yticks:[0,50,100,150,200,234],xticks:D.flow.map((r,i)=>({v:i+.5,l:String(r.fy_ce),l2:'BE '+r.fy_be})),ylabel:'Patients',rr:12,label:'Stacked bars: patient status at each yearly review'});
+  const bw=Math.min(78,(fr.w-fr.m.l-fr.m.r)/D.flow.length*.62);
+  D.flow.forEach((r,i)=>{ let acc=0; FLOWC.forEach(([k,l,c])=>{ const v=r[k]; if(v==null) return; const y1=fr.y(acc+v), y0=fr.y(acc); const rc=S('rect',{x:fr.x(i+.5)-bw/2,y:y1+1,width:bw,height:Math.max(0,y0-y1-2),rx:2,style:`fill:${c}`},fr.svg); if(y0-y1>17){ const t=S('text',{x:fr.x(i+.5),y:(y0+y1)/2+4,'text-anchor':'middle',style:`fill:${k==='not_followed'?'var(--ink)':'#fff'};font-size:12px;font-weight:600`},fr.svg); t.textContent=v; } acc+=v; }); });
+  hover(host,fr,px=>{ const i=Math.floor((px-fr.m.l)/((fr.w-fr.m.l-fr.m.r)/D.flow.length)); if(i<0||i>=D.flow.length) return null; const r=D.flow[i]; return {x:fr.x(i+.5),html:`<b>${r.fy_ce} (BE ${r.fy_be})</b>`+FLOWC.slice().reverse().map(([k,l,c])=>tipRow(c,l,cnt(r[k]))).join('')}; });
+  $('flow-legend').innerHTML=FLOWC.map(([k,l,c])=>`<span><i style="background:${c}"></i>${l}</span>`).join('');
+  table('flow',['Year (BE)','Attending with new eGFR','Not followed / no new eGFR','Started dialysis (cumulative)','Died (cumulative)'],D.flow.map(r=>[`${r.fy_ce} (${r.fy_be})`,cnt(r.attending),cnt(r.not_followed),cnt(r.dialysis),cnt(r.died)]));
+}
+function drawBase(){ table('base',['Starting eGFR group','Patients','Median eGFR (IQR)','Mean ± SD'],D.baseline.map((b,i)=>[GSHORT[i]+' ('+G[i].split(' ')[1].replace(/[()]/g,'')+')',f0(b.n),`${f1(b.median)} (${f1(b.q1)}–${f1(b.q3)})`,`${f1(b.mean)} ± ${f1(b.sd)}`])); }
+function drawTraj(){
+  const host=$('traj-chart'), model=state.mode==='model';
+  $('traj-title').textContent=model?'Model trend with 95% confidence band':'Median eGFR with interquartile range';
+  $('traj-desc').textContent=model?'Straight-line trend for each group from a mixed model. Lines stop where follow-up becomes sparse.':'Median and middle 50% of patients at each year since enrolment. Years with fewer than 10 patients are not shown.';
+  const fr=frame(host,{h:380,xd:[0,model?9:8],yd:[0,70],yticks:[0,10,20,30,40,50,60,70],xticks:[0,1,2,3,4,5,6,7,8,9].filter(v=>v<=(model?9:8)),xlabel:'Years since enrolment',ylabel:'eGFR (mL/min/1.73 m²)',label:'eGFR by years since enrolment'});
+  const labs=[]; const series=[];
+  G.forEach((g,i)=>{ if(!state.vis[i]) return; const c=GC[i];
+    if(model){ const m=D.mixed_model[g]; const pts=m.x.map((v,k)=>[v,m.y[k]]); band(fr.svg,m.x.map((v,k)=>[v,m.hi[k]]),m.x.map((v,k)=>[v,m.lo[k]]),fr.x,fr.y,c,.2); S('path',{d:path(pts,fr.x,fr.y),style:`fill:none;stroke:${c};stroke-width:2.6`},fr.svg); const l=pts[pts.length-1]; labs.push({yv:l[1],x:fr.x(l[0]),text:`${GSHORT[i]}: −${f2(m.decline)}/yr`,color:c}); series.push({i,pts});
+    } else { const rows=D.trajectory[g].filter(r=>r.median!=null&&r.year<=8); const pts=rows.map(r=>[r.year,r.median]); band(fr.svg,rows.map(r=>[r.year,r.q3]),rows.map(r=>[r.year,r.q1]),fr.x,fr.y,c,.16); S('path',{d:path(pts,fr.x,fr.y),style:`fill:none;stroke:${c};stroke-width:2.4`},fr.svg); rows.forEach(r=>S('circle',{cx:fr.x(r.year),cy:fr.y(r.median),r:3.6,style:`fill:${c};stroke:var(--surface);stroke-width:1.5`},fr.svg)); const l=pts[pts.length-1]; labs.push({yv:l[1],x:fr.x(l[0]),text:GSHORT[i],color:c}); series.push({i,rows}); }
+  });
+  dlabels(fr,labs);
+  hover(host,fr,px=>{ const xv=(px-fr.m.l)/(fr.w-fr.m.l-fr.m.r)*(model?9:8); if(model){ const out=[]; series.forEach(s=>{ const m=D.mixed_model[G[s.i]]; if(xv>m.x[m.x.length-1]) return; let k=0; for(let j=0;j<m.x.length;j++) if(Math.abs(m.x[j]-xv)<Math.abs(m.x[k]-xv)) k=j; out.push(tipRow(GC[s.i],GSHORT[s.i],`${f1(m.y[k])} (${f1(m.lo[k])}–${f1(m.hi[k])})`)); }); if(!out.length) return null; return {x:Math.max(fr.m.l,Math.min(fr.w-fr.m.r,px)),html:`<b>Year ${f1(Math.max(0,xv))}</b>`+out.join('')}; }
+    const yr=Math.round(xv); if(yr<0||yr>8) return null; const out=[]; series.forEach(s=>{ const r=s.rows.find(q=>q.year===yr); if(r) out.push(tipRow(GC[s.i],GSHORT[s.i],`${f1(r.median)} (${f1(r.q1)}–${f1(r.q3)}), n=${r.n}`)); }); if(!out.length) return null; return {x:fr.x(yr),html:`<b>Year ${yr}</b>`+out.join('')}; });
+  const rows=[]; G.forEach((g,i)=>D.trajectory[g].forEach(r=>rows.push([GSHORT[i],r.year,cnt(r.n),r.median==null?'–':f1(r.median),r.q1==null?'–':f1(r.q1),r.q3==null?'–':f1(r.q3)])));
+  table('traj',['Starting eGFR','Year since enrolment','Patients','Median','Q1','Q3'],rows);
+}
+function drawModel(){ table('model',['Starting eGFR','Patients','eGFR values','Starting level (model)','Decline per year (95% CI)','SD of individual slopes'],G.map((g,i)=>{ const m=D.mixed_model[g]; return [GSHORT[i],f0(m.patients),f0(m.n_values),f1(m.intercept),`${f2(m.decline)} (${f2(m.ci_low)} to ${f2(m.ci_high)})`,f2(m.sd_slope)]; })); }
+function drawDecline(){
+  const A=D.decline.all,B=D.decline.attending_2569;
+  $('decl-stats').innerHTML=[['All patients followed at least 1 year',A,'n='+f0(A.n)],['Still attending in 2026 (BE 2569)',B,'n='+f0(B.n)]].map(([t,s,n])=>`<div class="stat"><div class="t">${t} · ${n}</div><div class="big">${f1(s.pct_le4)}%</div><p>decline 4 or less per year. Mean ${f1(s.mean)} ± ${f1(s.sd)}; median ${f1(s.median)} (IQR ${f1(s.q1)} to ${f1(s.q3)}) mL/min/1.73 m² per year.</p></div>`).join('');
+  $('hist-desc').textContent=`${f0(A.n)} patients followed at least one year. Bars show the number of patients in each range of yearly decline (mL/min/1.73 m² per year).`;
+  const hs=D.decline.hist; const host=$('hist-chart'); const max=Math.max(...hs.map(h=>h.n||0)); const top=Math.ceil(max/10)*10+10;
+  const fr=frame(host,{h:320,xd:[0,hs.length],yd:[0,top],yticks:[0,10,20,30,40,50,60].filter(v=>v<=top),xticks:hs.map((h,i)=>({v:i+.5,l:h.bin})),xlabel:'Yearly decline (mL/min/1.73 m² per year; negative = rise)',ylabel:'Patients',rr:12,label:'Histogram of yearly eGFR decline'});
+  const bw=(fr.w-fr.m.l-fr.m.r)/hs.length*.78; hs.forEach((h,i)=>{ if(h.n==null) return; const c=i<=3?'var(--c1)':'var(--s2)'; const y=fr.y(h.n); S('rect',{x:fr.x(i+.5)-bw/2,y,width:bw,height:fr.y(0)-y,rx:3,style:`fill:${c}`},fr.svg); const t=S('text',{x:fr.x(i+.5),y:y-6,'text-anchor':'middle',style:'fill:var(--ink);font-size:12px;font-weight:600'},fr.svg); t.textContent=h.n; });
+  const cx=fr.x(4); S('line',{x1:cx,x2:cx,y1:fr.m.t,y2:fr.y(0),style:'stroke:var(--ink);stroke-dasharray:4 3'},fr.svg); const ct=S('text',{x:cx+6,y:fr.m.t+12,style:'fill:var(--ink);font-size:12px'},fr.svg); ct.textContent='4 per year';
+  hover(host,fr,px=>{ const i=Math.floor((px-fr.m.l)/((fr.w-fr.m.l-fr.m.r)/hs.length)); if(i<0||i>=hs.length) return null; return {x:fr.x(i+.5),html:`<b>${hs[i].bin} per year</b>${tipRow(i<=3?'var(--c1)':'var(--s2)','Patients',cnt(hs[i].n))}`}; });
+  table('hist',['Yearly decline range','Patients'],hs.map(h=>[h.bin,cnt(h.n)]));
+  const bg=D.decline.by_group; const h2=$('pct-chart'); const f2r=frame(h2,{h:190,m:{l:120,b:30,t:6},xd:[0,100],yd:[0,3],yticks:[],xticks:[0,25,50,75,100].map(v=>({v,l:v+'%'})),rr:60,label:'Share declining 4 or less per year by group'});
+  bg.forEach((b,i)=>{ const yc=f2r.y(2.5-i), bh=26; S('rect',{x:f2r.x(0),y:yc-bh/2,width:f2r.x(100)-f2r.x(0),height:bh,rx:3,style:'fill:var(--grid)'},f2r.svg); S('rect',{x:f2r.x(0),y:yc-bh/2,width:f2r.x(b.pct_le4)-f2r.x(0),height:bh,rx:3,style:`fill:${GC[i]}`},f2r.svg); const l=S('text',{x:f2r.m.l-10,y:yc+4,'text-anchor':'end',style:'fill:var(--ink);font-size:12.5px'},f2r.svg); l.textContent=GSHORT[i]; const v=S('text',{x:f2r.x(b.pct_le4)+8,y:yc+4,style:'fill:var(--ink);font-size:12.5px;font-weight:600'},f2r.svg); v.textContent=f1(b.pct_le4)+'% (n='+b.n+')'; });
+  table('pct',['Starting eGFR','Patients','Median decline per year','% declining 4 or less'],bg.map((b,i)=>[GSHORT[i],f0(b.n),f1(b.median),f1(b.pct_le4)+'%']));
+  $('decl-note').innerHTML=`<b>Read with care.</b> Among those still attending in 2026, ${f1(B.pct_le4)}% fell 4 or less per year, but this group excludes patients who died or started dialysis, who usually fell faster. Across everyone followed at least a year the figure is ${f1(A.pct_le4)}%.`;
+}
+function drawKM(){
+  const host=$('km-chart'); const fr=frame(host,{h:380,xd:[0,9],yd:[0,100],yticks:[0,20,40,60,80,100],yfmt:v=>v+'%',xticks:[0,1,2,3,4,5,6,7,8,9],xlabel:'Years since enrolment',ylabel:'Alive and free of dialysis',label:'Kaplan-Meier curves'});
+  const labs=[]; const cs=[];
+  G.forEach((g,i)=>{ if(!state.vis[i]) return; const k=D.km[g], c=GC[i]; const idx=k.s.map((v,j)=>v==null?-1:j).filter(j=>j>=0); const pts=idx.map(j=>[k.t[j],k.s[j]*100]); band(fr.svg,idx.map(j=>[k.t[j],k.hi[j]*100]),idx.map(j=>[k.t[j],k.lo[j]*100]),fr.x,fr.y,c,.16); S('path',{d:path(pts,fr.x,fr.y),style:`fill:none;stroke:${c};stroke-width:2.6`},fr.svg); const l=pts[pts.length-1]; labs.push({yv:l[1],x:fr.x(l[0]),text:GSHORT[i]+': '+Math.round(l[1])+'%',color:c}); cs.push({i,k}); });
+  dlabels(fr,labs);
+  hover(host,fr,px=>{ const xv=(px-fr.m.l)/(fr.w-fr.m.l-fr.m.r)*9; const out=[]; cs.forEach(({i,k})=>{ let j=Math.round(xv/.25); if(j<0)j=0; if(j>=k.s.length||k.s[j]==null) return; out.push(tipRow(GC[i],GSHORT[i],`${Math.round(k.s[j]*100)}% (${Math.round(k.lo[j]*100)}–${Math.round(k.hi[j]*100)})`)); }); if(!out.length) return null; return {x:Math.max(fr.m.l,Math.min(fr.w-fr.m.r,px)),html:`<b>Year ${f1(Math.max(0,xv))}</b>`+out.join('')}; });
+  const rows=[]; G.forEach((g,i)=>{ const k=D.km[g]; for(let j=0;j<k.t.length;j+=4) rows.push([GSHORT[i],f0(k.t[j]),k.s[j]==null?'<10 at risk':Math.round(k.s[j]*100)+'%',k.lo[j]==null?'–':Math.round(k.lo[j]*100)+'%',k.hi[j]==null?'–':Math.round(k.hi[j]*100)+'%']); });
+  table('km',['Starting eGFR','Year','Free of death/dialysis','Lower 95%','Upper 95%'],rows);
+  table('kmest',['Starting eGFR','Patients','Events (death or dialysis)','Events per 100 person-years','1 year','3 years','5 years','At risk: yr 0 / 2 / 4 / 6'],G.map((g,i)=>{ const k=D.km[g]; const e=y=>k.events===0?'100% (no events)':`${k.est[y][0]}% (${k.est[y][1]}–${k.est[y][2]})`; return [GSHORT[i],f0(k.n),k.events===0?'none observed':f0(k.events),f1(k.rate_per100py),e('1'),e('3'),e('5'),['0','2','4','6'].map(y=>cnt(k.at_risk[y])).join(' / ')]; }));
+  const a=D.km[G[2]],b=D.km[G[1]];
+  $('km-note').innerHTML=`<b>Read with care.</b> By 5 years, ${a.est['5'][0]}% of patients starting under 30 were alive and off dialysis, against ${b.est['5'][0]}% of those starting at 30–44. No death or dialysis was seen in the 45-or-more group, which has only ${D.km[G[0]].n} patients. If some patients lost to follow-up died or started dialysis elsewhere, these figures are too favourable.`;
+}
+const RENDER={overview:()=>{drawFlow();drawBase();},trajectory:()=>{drawTraj();drawModel();},decline:drawDecline,survival:drawKM,methods:()=>{}};
+function renderTab(id){ (RENDER[id]||(()=>{}))(); tools(); }
+function showTab(id,push){ if(!RENDER[id]) id='overview'; state.tab=id; document.querySelectorAll('section.panel').forEach(s=>s.hidden=s.id!==id); document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===id))); hideTip(); tools(); renderTab(id); if(push){ try{ history.replaceState(null,'','#'+id); }catch(e){} } }
+$('tabs').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) showTab(b.dataset.tab,true); });
+let rt; new ResizeObserver(()=>{ clearTimeout(rt); rt=setTimeout(()=>renderTab(state.tab),120); }).observe(document.body);
+tools(); showTab((location.hash||'').replace('#','')||'overview',false);
+</script>
+
+</body>
+</html>
