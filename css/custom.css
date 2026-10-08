@@ -44,3 +44,18 @@
 #blog-post #post-content p {
   margin-bottom: 1em;
 }
+
+/* Keep the two content carousel slides legible at narrow widths. */
+.home-carousel .item--content-link .btn {
+  white-space: normal;
+  max-width: 100%;
+  line-height: 1.6;
+}
+.home-carousel .item--content-link img {
+  border-radius: 8px;
+}
+@media (max-width: 767px) {
+  .home-carousel .item--content-link .right { text-align: center; }
+  .home-carousel .item--content-link h1 { font-size: 28px; line-height: 1.4; }
+  .home-carousel .item--content-link p { font-size: 18px; line-height: 1.6; }
+}
